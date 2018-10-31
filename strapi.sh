@@ -26,7 +26,11 @@ then
 fi
 
 cd $APP_NAME
+
+# Run bash commands in the background.
 strapi start &
 
+# https://unix.stackexchange.com/questions/85021/in-bash-scripting-whats-the-meaning-of
+# "$!" contains the process ID of the most recently executed background pipeline.
 strapiPID=$!
 wait "$strapiPID"
